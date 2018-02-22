@@ -4,6 +4,11 @@
     "name": "Override New Tab",
     "description": "This extension shows a custom page when a new tab is opened",
     "version": "1.0",
+    
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+      },
 
     "background":{
         "scripts": ["background.js"]
@@ -16,6 +21,7 @@
     },
 
     "permissions": [
-        "tabs"
+        "tabs",
+        "storage"
     ]
 }

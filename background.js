@@ -1,6 +1,10 @@
 chrome.tabs.onCreated.addListener(function(tab){
     if (tab.url == 'chrome://newtab/') {
-        var newURL = "http://localhost:5000";
-        chrome.tabs.update({ url: newURL });
+        chrome.storage.sync.get({
+            address: 'chrome://newtab/'
+        }, function(items) {
+            console.log(items.address);
+            chrome.tabs.update({ url: items.address });
+        });
     }
 })
